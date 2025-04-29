@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A curated list of job and internship opportunities for entry-level and internship positions in APM roles!">
-    <title>APM List - Job & Internship Opportunities</title>
+    <meta name="description" content="A curated list of job and internship opportunities for entry-level and internship positions in UX and APM roles!">
+    <title>UX Job List</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global styles */
+        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #111111; /* Dark background */
-            color: #E0E0E0; /* Light gray text */
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
         }
 
         /* Header Styles */
         header {
-            background-color: #212121; /* Dark gray header */
-            color: #FFF;
-            padding: 40px 0;
+            background-color: #0073e6;
+            color: #fff;
+            padding: 40px 20px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
         header h1 {
@@ -35,90 +32,116 @@
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-top: 10px;
+            font-weight: 300;
         }
 
-        /* Search Bar Styles */
+        /* Search Bar */
         .search-bar {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 30px auto;
-            display: block;
-            padding: 12px;
+            padding: 15px;
             font-size: 1rem;
-            border: 1px solid #333;
             border-radius: 8px;
-            background-color: #333;
-            color: #FFF;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            color: #333;
         }
 
         .search-bar:focus {
-            border-color: #0073e6;
             outline: none;
+            border-color: #0073e6;
         }
 
-        /* Table Styles */
-        table {
-            width: 80%;
-            margin: 30px auto;
-            border-collapse: collapse;
-            background-color: #212121; /* Dark table background */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
+        /* Job List Container */
+        .job-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
         }
 
-        table, th, td {
-            border: 1px solid #333;
+        /* Job Card */
+        .job-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        th, td {
-            padding: 15px;
-            text-align: left;
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        th {
-            background-color: #333; /* Darker header for table */
-            color: #FFF;
+        .job-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0073e6;
         }
 
-        td a {
-            color: #4FC3F7; /* Light blue color for links */
+        .job-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .job-card a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #0073e6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .job-card a:hover {
+            background-color: #005bb5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
             text-decoration: none;
         }
 
-        td a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
 
-        tr:nth-child(even) {
-            background-color: #333; /* Slightly lighter rows */
-        }
-
-        tr:nth-child(odd) {
-            background-color: #444; /* Darker odd rows */
-        }
-
-        /* Hover effect for rows */
-        tr:hover {
-            background-color: #555; /* Hover over row color */
-        }
-
-        /* Responsive Table */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            table {
+            .job-card {
                 width: 100%;
+                max-width: 350px;
             }
-        }
 
-        /* Footer Styles */
-        footer {
-            background-color: #212121; /* Dark footer */
-            color: #FFF;
-            text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .search-bar {
+                width: 95%;
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -126,98 +149,43 @@
 
     <!-- Header Section -->
     <header>
-        <h1>APM List</h1>
-        <p>A curated list of job and internship opportunities for entry-level and internship positions in APM roles!</p>
+        <h1>UX Job List</h1>
+        <p>A curated list of UX job and internship opportunities!</p>
     </header>
 
     <!-- Search Bar -->
-    <input type="text" id="searchBar" class="search-bar" placeholder="Search for a company or role..." />
+    <input type="text" class="search-bar" placeholder="Search for job roles or companies..." />
 
-    <!-- Entry-Level Jobs Section -->
-    <section>
-        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 20px; color: #FFF;">Entry-Level Positions</h2>
-        <table id="entryLevelTable">
-            <thead>
-                <tr>
-                    <th>Company</th>
-                    <th>Position Type</th>
-                    <th>Apply Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Entry-Level Job Listings -->
-                <tr>
-                    <td>Datadog</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.datadoghq.com/detail/6539070/?gh_jid=6539070" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Datadog</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.datadoghq.com/detail/6565227/?gh_jid=6565227" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Datadog</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.datadoghq.com/detail/6821785/?gh_jid=6821785" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Zynga</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://job-boards.greenhouse.io/zyngacareers/jobs/5472655004" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Walmart</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.walmart.com/us/jobs/WD2148511-design-researcher" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Zynga</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://job-boards.greenhouse.io/zyngacareers/jobs/5503605004" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Zynga</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://job-boards.greenhouse.io/zyngacareers/jobs/5462053004" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Yahoo</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Product-Manager---DSP-Data_JR0025969" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Yahoo</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://ouryahoo.wd5.myworkdayjobs.com/careers/job/United-States-of-America/Senior-Product-Designer--Growth-and-Experimentation_JR0025513" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Twitter</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://twitter.wd5.myworkdayjobs.com/X/job/Palo-Alto-CA/Senior-Staff-Product-Designer_R100252?source=XCareers" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Warner Bros. Discovery</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.wbd.com/global/en/job/R000093083/Broadcast-Designer-Sports-Temporary" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Warner Bros. Discovery</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.wbd.com/global/en/job/R000092817/Sr-Product-Designer-Advertising-Experiences" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Warner Bros. Discovery</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.wbd.com/global/en/job/R000092603/Franchise-Management-Marketing-Associate" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Warner Bros. Discovery</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.wbd.com/global/en/job/R000091584/Associate-Global-Brand-Product" target="_blank">Apply Here</a></td>
-                </tr>
-                <tr>
-                    <td>Oracle</td>
-                    <td>Entry-Level</td>
-                    <td><a href="https://careers.oracle.com/en/sites/jobsearch/jobs/preview/290104/?keyword=User+
+    <!-- Job Listings -->
+    <section class="job-list">
+        <!-- Example Job Cards -->
+        <div class="job-card">
+            <h3>Datadog</h3>
+            <p>Junior Product Designer</p>
+            <a href="https://careers.datadoghq.com/detail/6539070/?gh_jid=6539070" target="_blank">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Zynga</h3>
+            <p>Game UX Designer</p>
+            <a href="https://job-boards.greenhouse.io/zyngacareers/jobs/5472655004" target="_blank">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Amazon</h3>
+            <p>UX Designer - Amazon Customer Service</p>
+            <a href="https://www.amazon.jobs/en/jobs/2945260/ux-designer-amazon-customer-service" target="_blank">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Walmart</h3>
+            <p>Design Researcher</p>
+            <a href="https://careers.walmart.com/us/jobs/WD2148511-design-researcher" target="_blank">Apply Now</a>
+        </div>
+        <!-- More job cards can be added here -->
+    </section>
 
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 UX Job List | <a href="https://www.linkedin.com">LinkedIn</a></p>
+    </footer>
+
+</body>
+</html>
